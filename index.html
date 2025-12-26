@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔱 समृद्धी वास्तु ज्योतिष</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&family=Rozha+One&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS Reset & Variables --- */
+        :root {
+            --bg-dark: #050505;
+            --bg-light: #F9F9F9;
+            --text-light: #FFFFFF;
+            --text-dark: #111111;
+            --text-gray: #B0B0B0;
+            --gold: #BF953F;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-hindi: 'Poppins', sans-serif;
+            /* Using Poppins for Hindi as it supports it well, or fallback */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Typography --- */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .text-white {
+            color: var(--text-light);
+        }
+
+        .text-black {
+            color: var(--text-dark);
+        }
+
+        .text-gray {
+            color: var(--text-gray);
+        }
+
+        /* --- Components --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-white {
+            background: #FFFFFF;
+            color: #000000;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+        }
+
+        .btn-black {
+            background: #000000;
+            color: #FFFFFF;
+        }
+
+        .btn-black:hover {
+            background: #222222;
+        }
+
+        .btn-outline {
+            border: 1px solid #FFFFFF;
+            color: #FFFFFF;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #FFFFFF;
+            color: #000000;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        /* --- Top Bar --- */
+        .top-bar {
+            background-color: #f5f5f5;
+            color: #000;
+            text-align: center;
+            padding: 0.5rem 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: transparent;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #FFF;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            line-height: 1;
+            text-decoration: none;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: #050505 url('light-stary-bg.jpg') center/cover no-repeat;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+
+        /* Dark overlay for hero */
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .zodiac-wheel {
+            width: 100%;
+            max-width: 500px;
+            animation: rotate 60s linear infinite;
+            opacity: 0.9;
+        }
+
+        /* --- Kundali Section --- */
+        #kundali {
+            position: relative;
+            background: #f9f9f9;
+            /* solid background color */
+            overflow: hidden;
+        }
+
+        #kundali::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('light-zodiac-bg.jpg') center/cover no-repeat;
+            opacity: 0.30;
+            /* adjust image opacity here */
+            z-index: 0;
+        }
+
+        #kundali>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .kundali-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .kundali-img img {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .feature-list li::before {
+            content: '•';
+            font-size: 1.5rem;
+            line-height: 0.5;
+        }
+
+        /* --- Call Section --- */
+        #call-consultation {
+            background: #000;
+            color: white;
+            overflow: hidden;
+        }
+
+        .call-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .person-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* --- Vastu Section --- */
+        #vastu {
+            position: relative;
+            background: #f9f9f9;
+            /* solid background color */
+            overflow: hidden;
+        }
+
+        #vastu::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('light-zodiac-bg.jpg') center/cover no-repeat;
+            opacity: 0.30;
+            /* adjust image opacity here */
+            z-index: 0;
+        }
+
+        #vastu>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .vastu-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .vastu-icon img {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        /* --- Meeting Section --- */
+        #meeting {
+            background: #000;
+            color: white;
+        }
+
+        .meeting-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .meeting-icon img {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        /* --- About Section --- */
+        #about {
+            position: relative;
+            background: #f9f9f9;
+            /* solid background color */
+            overflow: hidden;
+        }
+
+        #about::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('light-zodiac-bg.jpg') center/cover no-repeat;
+            opacity: 0.30;
+            /* adjust image opacity here */
+            z-index: 0;
+        }
+
+        #about>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        /* --- Solutions Section --- */
+        #solutions {
+            position: relative;
+            background: #050505;
+            /* dark base */
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+
+        #solutions::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('light-stary-bg.jpg') center/cover no-repeat;
+            opacity: 0.25;
+            /* adjust image opacity here */
+            z-index: 0;
+        }
+
+        #solutions>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 3rem 2rem;
+            transition: transform 0.3s;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            position: relative;
+            background: #f9f9f9;
+            /* solid background color */
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('light-zodiac-bg.jpg') center/cover no-repeat;
+            opacity: 0.30;
+            /* adjust image opacity here */
+            z-index: 0;
+        }
+
+        #contact>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: none;
+            border-bottom: 1px solid #000;
+            background: transparent;
+            outline: none;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #050505;
+            color: white;
+            padding: 4rem 0 2rem;
+            border-top: none;
+        }
+
+        .footer-logo {
+            font-size: 4rem;
+            font-family: var(--font-heading);
+            margin-bottom: 2rem;
+            display: block;
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* --- Animations --- */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content,
+            .kundali-grid,
+            .call-grid,
+            .vastu-grid,
+            .meeting-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .kundali-img {
+                order: -1;
+            }
+
+            .call-grid .person-img {
+                order: -1;
+            }
+
+            .vastu-grid .vastu-icon {
+                order: -1;
+            }
+
+            .meeting-grid .meeting-icon {
+                order: 1;
+            }
+
+            /* Icon below text on mobile for this one? Or above? Let's keep consistent */
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Simplified for now */
+
+            .feature-list li {
+                justify-content: center;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #hero {
+                min-height: auto;
+                padding: 6rem 0 4rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .zodiac-wheel {
+                max-width: 280px;
+                margin: 2rem auto 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .kundali-grid,
+            .call-grid,
+            .vastu-grid,
+            .meeting-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .feature-list li {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-card p {
+                min-height: auto !important;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #000;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 2rem 0;
+                display: none;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* --- Global Fixes --- */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Shop Section --- */
+        .shop-section {
+            background: #f9f9f9;
+            padding-bottom: 4rem;
+        }
+
+        .shop-header {
+            background: #f5f5f5;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .shop-header h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .shop-subheader {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .shop-subheader p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card img {
+            width: 100%;
+            margin-bottom: 1rem;
+            object-fit: contain;
+            height: 200px;
+            /* Fixed height for consistency */
+        }
+
+        .product-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            /* Pushes button to bottom */
+        }
+
+        .product-card .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* --- Stats Section --- */
+        .stats-section {
+            background: #f9f9f9 url('light-zodiac-bg.jpg') center/cover;
+            padding: 4rem 0;
+            border-top: 1px solid #eee;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Add overlay to ensure text readability if bg is busy */
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(249, 249, 249, 0.8);
+            z-index: 0;
+        }
+
+        .stats-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #000;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonials-section {
+            background: #050505;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-header h2 {
+            display: inline-block;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 1rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            color: #000;
+            height: 100%;
+        }
+
+        /* --- Mobile Navigation Improvements --- */
+        @media (max-width: 992px) {
+            .nav-links {
+                background: rgba(0, 0, 0, 0.95);
+                /* Darker, more opaque */
+                backdrop-filter: blur(10px);
+                padding: 4rem 2rem;
+                height: 100vh;
+                /* Full screen menu */
+                justify-content: center;
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(100%);
+                /* Slide in from right */
+                top: 0;
+                left: auto;
+                right: 0;
+                width: 80%;
+                max-width: 300px;
+                display: flex !important;
+                /* Override display: none */
+                position: fixed;
+                /* Fixed position */
+            }
+
+            .nav-links.show {
+                transform: translateX(0);
+            }
+
+            /* Overlay when menu is open */
+            .menu-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 99;
+                display: none;
+            }
+
+            .menu-overlay.show {
+                display: block;
+            }
+
+            .menu-toggle {
+                z-index: 101;
+                /* Above menu */
+                position: relative;
+            }
+        }
+
+        /* --- Mobile Layout Adjustments --- */
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .shop-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .footer-logo {
+                font-size: 2.5rem;
+            }
+
+            /* Form inputs */
+            .contact-form input {
+                font-size: 1rem;
+                /* Prevent zoom on iOS */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <i class="fas fa-phone-alt"></i> आताच संपर्क करा: +91 92251 37171
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                astro by<br><span>Ranjeet Deshmukh</span>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>समस्यांवर अचूक आणि<br>विश्वासार्ह उपाय</h1>
+                <p>नातेसंबंध, करिअर, व्यवसाय, आरोग्य, वास्तु व आर्थिक अडचणींसाठी
+                    समृद्धी वास्तु ज्योतिष – कोल्हापूर येथे अनुभवी व शास्त्रशुद्ध मार्गदर्शन मिळते.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-white">कंसल्टेशन बुक करा</a>
+                    <a href="#" class="btn btn-outline">कुंडली बनवा</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="zodiac-circle.png" alt="Zodiac Wheel" class="zodiac-wheel">
+            </div>
+        </div>
+    </section>
+
+    <!-- Kundali Section -->
+    <section id="kundali" class="section-padding">
+        <div class="container kundali-grid">
+            <div class="kundali-img">
+                <img src="ipad-screen.png" alt="Kundali App">
+            </div>
+            <div class="content">
+                <h2 class="text-black">आपली संपूर्ण विगतवार कुंडली
+                    <br>बनवा
+                </h2>
+                <ul class="feature-list text-black">
+                    <li>100% अचूक कुंडली</li>
+                    <li>पुढील 100 वर्षांपर्यंतच्या भविष्याची माहिती</li>
+                    <li>नवजात बालकासाठी उपयुक्त</li>
+                    <li>करिअर / प्रेम / व्यवसाय / नोकरी संदर्भातील मार्गदर्शन</li>
+                    <li>मंगळदोष, कालसर्पदोष यांसारख्या विविध दोषांची माहिती</li>
+                    <li>कुंडली PDF स्वरूपात उपलब्ध</li>
+                </ul>
+                <a href="#" class="btn btn-black">कुंडली बनवा ₹1100</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call Consultation Section -->
+    <section id="call-consultation" class="section-padding">
+        <div class="container call-grid">
+            <div class="content">
+                <h2>आपल्या सर्व प्रश्नांची उत्तरे मिळवा</h2>
+                <p class="text-gray">जर तुम्हाला जीवनात अडचणी येत असतील किंवा योग्य निर्णय घेता येत नसेल,
+                    तर डॉ. रंजीत देशमुख यांच्याशी फोनवर सल्लामसलत करणे हा एक उत्तम पर्याय आहे.
+                </p>
+                <a href="#" class="btn btn-white">कॉल बुक करा ₹500</a>
+            </div>
+            <div class="visual">
+                <img src="tempp-ranjeet.png" alt="Ranjeet Deshmukh" class="person-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vastu Section -->
+    <section id="vastu" class="section-padding">
+        <div class="container vastu-grid">
+            <div class="vastu-icon">
+                <img src="handshake.png" alt="Vastu Icon">
+            </div>
+            <div class="content">
+                <h2 class="text-black">रिअल इस्टेटसाठी वास्तु सल्ला <br>कन्सल्टेशन</h2>
+                <p class="text-black">डॉ. रंजीत देशमुख यांच्या वास्तु व ज्योतिष सल्ल्यामुळे
+                    आपले घर, दुकान किंवा कार्यालय अधिक सकारात्मक,
+                    समृद्ध व संतुलित बनते.
+                </p>
+                <a href="#" class="btn btn-black">अपॉइंटमेंट बुक करा</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1-1 Meeting Section -->
+    <section id="meeting" class="section-padding">
+        <div class="container meeting-grid">
+            <div class="content">
+                <h2>डॉ. रंजीत देशमुख यांच्याशी वैयक्तिक भेट 1-1</h2>
+                <p class="text-gray">तुमच्या जीवनात कोणतीही समस्या असल्यास,
+                    तिच्यावर सखोल चर्चा करून योग्य उपाय मिळवण्यासाठी
+                    वैयक्तिक भेट घेता येईल.
+                </p>
+                <a href="#" class="btn btn-white">अपॉइंटमेंट बुक करा</a>
+            </div>
+            <div class="meeting-icon">
+                <img src="meeting-icon.png" alt="Meeting Icon">
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
+        <div class="shop-header">
+            <h2 class="text-black">लॅब सर्टिफाइड यंत्र, माळा व रत्न खरेदी करा</h2>
+        </div>
+        <div class="shop-subheader">
+            <p>सर्व उत्पादनांवर मोफत डिलिव्हरी (कोलहपुर)</p>
+        </div>
+
+        <div class="container">
+            <div class="shop-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="product-1.png" alt="Santan Gopal Yantra">
+                    <h4>मेरु श्री यंत्र</h4>
+                    <p>जे पती-पत्नी
+                        नि:संतान आहेत अथवा ज्यांची संतान वारंवार आजारी पडते, त्यांच्यासाठी मेरु श्री यंत्र अत्यंत
+                        लाभदायक मानले जाते.</p>
+                    <a href="#" class="btn btn-black">आत्ताच ऑर्डर करा</a>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="product-2.png" alt="Mangal Puja Yantra">
+                    <h4>कुबेर कुंजी</h4>
+                    <p>ज्यांच्या जीवनात
+                        आर्थिक अडचणी येत राहतात किंवा व्यवसाय-नोकरीत अडथळे येतात,
+                        अशांसाठी कुबेर कुंजी अत्यंत उपयुक्त मानली जाते.</p>
+                    <a href="#" class="btn btn-black">आत्ताच ऑर्डर करा</a>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="product-3.png" alt="Rahu Gomedak">
+                    <h4>पारद श्री यंत्र</h4>
+                    <p>ज्यांच्या जीवनात
+                        नकारात्मक ऊर्जा किंवा कामात यश मिळण्यात अडचणी येत असतील,
+                        त्यांच्यासाठी पारद श्री यंत्र अत्यंत प्रभावी मानले जाते.</p>
+                    <a href="#" class="btn btn-black">आत्ताच ऑर्डर करा</a>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="product-4.png" alt="Mangal Moonga">
+                    <h4>कमळ गट्टा माळ</h4>
+                    <p>ज्यांना मानसिक
+                        एकाग्रता वाढवायची आहे, साधना-जपात सातत्य येत नाही त्यांच्यासाठी कमळ गट्टा माळ उपयुक्त मानली
+                        जाते.</p>
+                    <a href="#" class="btn btn-black">आत्ताच ऑर्डर करा</a>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" class="btn btn-black" style="border-radius: 50px; padding: 1rem 3rem;">सर्व प्रकारचे यंत्र व
+                    रत्न खरेदी करा</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <p class="stat-label">वर्षांचा अनुभव<br>ज्योतिष विद्या क्षेत्रात</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,000+</div>
+                <p class="stat-label">जागतिक स्तरावरील समाधानी <br>ग्राहक</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5-स्टार</div>
+                <p class="stat-label">सर्व प्लॅटफॉर्मवर 5-स्टार <br>रेटिंग</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="text-white">आमचे क्लाइंट काय म्हणतात</h2>
+            </div>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div style="font-size: 2rem; color: #000; margin-bottom: 1rem;">“</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">करिअरचा तणाव!</h3>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 2rem;">डॉ. रंजीत देशमुख यांनी माझ्या
+                        नोकरीसंबंधी समस्यांमध्ये मला मोलाचे मार्गदर्शन केले.
+                        त्यांच्या सल्ल्यामुळे परिस्थिती स्पष्ट झाली आणि आता मी माझ्या करिअरबाबत अधिक आत्मविश्वासाने
+                        निर्णय घेऊ शकतो.
+                        त्यांच्या मदतीसाठी मी मनापासून आभारी आहे.
+                    </p>
+                    <div style="color: #FFD700; margin-bottom: 0.5rem;">★★★★★</div>
+                    <div style="font-weight: 700;">Tushar Deshmukh</div>
+                    <div style="font-size: 0.8rem; color: #777;">Kolhapur</div>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div style="font-size: 2rem; color: #000; margin-bottom: 1rem;">“</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"> वास्तु उपाय!</h3>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 2rem;">डॉ. रंजीत देशमुख यांनी त्यांच्या
+                        ज्योतिष व वास्तु ज्ञानाच्या आधारे माझ्या दुकानासाठी अतिशय उपयुक्त मार्गदर्शन केले.
+                        त्यांनी सुचवलेल्या सकारात्मक बदलांमुळे दुकानातील वातावरण सुधारले
+                        आणि व्यवसायातही लक्षणीय प्रगती झाली.
+                    </p>
+                    <div style="color: #FFD700; margin-bottom: 0.5rem;">★★★★★</div>
+                    <div style="font-weight: 700;">Ravi Patil</div>
+                    <div style="font-size: 0.8rem; color: #777;">Shiroli</div>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div style="font-size: 2rem; color: #000; margin-bottom: 1rem;">“</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">कौटुंबिक समस्या!</h3>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 2rem;">डॉ. रंजीत देशमुख यांनी माझ्या
+                        कुटुंबाला योग्य मार्गदर्शन केले.
+                        ज्योतिषावर आधारित त्यांच्या सल्ल्यामुळे आमच्या समस्या दूर झाल्या
+                        आणि घरात पुन्हा शांती व सकारात्मकता निर्माण झाली.
+                        त्यांच्या मार्गदर्शनाबद्दल मी मनापासून आभारी आहे.
+                    </p>
+                    <div style="color: #FFD700; margin-bottom: 0.5rem;">★★★★★</div>
+                    <div style="font-weight: 700;">Savita Chavan</div>
+                    <div style="font-size: 0.8rem; color: #777;">Kolhapur</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container about-grid">
+            <div>
+                <h2 class="text-black"
+                    style="border-bottom: 2px solid #000; display: inline-block; margin-bottom: 2rem;">आमच्याबद्दल
+                    महत्त्वाची माहिती
+                </h2>
+                <p class="text-gray">समृद्धी वास्तु ज्योतिष मध्ये आपले मनःपूर्वक स्वागत आहे.
+                    येथे आम्ही प्रत्येक व्यक्तीशी दयाळूपणा, समजूतदारपणा आणि पूर्ण आदराने वागतो.
+                    डॉ. रंजीत देशमुख हे कोल्हापूरमधील एक अनुभवी वास्तु व ज्योतिष सल्लागार असून, ते अनेक वर्षांपासून
+                    लोकांना जीवनातील विविध आव्हानांना सामोरे जाण्यास आणि सकारात्मक जीवन जगण्यास मदत करत आहेत.</p>
+                <h3 class="text-black" style="font-size: 1.8rem; margin-top: 2rem;">डॉ. रंजीत देशमुख<br>आपले विश्वासार्ह
+                    वास्तु व ज्योतिष सल्लागार</h3>
+                <p class="text-gray">
+
+
+
+                    डॉ. रंजीत देशमुख यांनी प्रेम, नातेसंबंध, व्यवसाय, आरोग्य, आर्थिक अडचणी तसेच कौटुंबिक समस्यांवर हजारो
+                    लोकांना अचूक मार्गदर्शन व प्रभावी उपाय दिले आहेत.
+
+                    साध्या सुरुवातीपासून आज ते एक प्रतिष्ठित आणि विश्वासार्ह सल्लागार म्हणून ओळखले जातात, ज्यांच्यावर
+                    असंख्य लोकांचा दृढ विश्वास आहे.</p>
+            </div>
+            <div>
+                <h3 class="text-black" style="font-size: 1.8rem;">सकारात्मक बदल आणि वैयक्तिक प्रगतीसाठी आपला मार्ग</h3>
+                <p class="text-gray">समृद्धी वास्तु ज्योतिष मध्ये आम्ही प्रत्येकाशी सन्मानपूर्वक आणि प्रामाणिकपणे
+                    वागण्यावर विश्वास ठेवतो.
+                    डॉ. रंजीत देशमुख कठीण काळात योग्य दिशा दाखवण्यासाठी आणि समस्यांवर प्रभावी उपाय शोधण्यासाठी सदैव
+                    आपल्या सोबत असतात.</p>
+                <p class="text-gray">सकारात्मक बदल आणि वैयक्तिक विकासाच्या या प्रवासात आमच्यासोबत सहभागी व्हा.
+                    चला, एकत्र मिळून आपल्या जीवनात शांती, स्थैर्य आणि उज्ज्वलता आणूया.</p>
+                <p class="text-black" style="font-weight: 600;">आजच कराकंसल्टेशन बुक करा</p>
+                <a href="#" class="btn btn-black" style="margin-top: 1rem;">आजच कराकंसल्टेशन बुक करा</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="section-padding">
+        <div class="container">
+            <h2
+                style="border-bottom: 1px solid #fff; display: inline-block; padding-bottom: 1rem; margin-bottom: 3rem;">
+                सर्व समस्यांवर उपाय</h2>
+            <div class="solutions-grid">
+                <!-- Family -->
+                <div class="solution-card">
+                    <div class="solution-icon"><i class="fas fa-users"></i></div>
+                    <h3>कुटुंब व नातेसंबंध</h3>
+                    <p style="font-size: 0.9rem; color: #ccc;">नातेसंबंधांतील शंका, गैरसमज आणि अडचणी दूर करून
+                        स्थैर्य, विश्वास आणि आनंदी कौटुंबिक जीवन निर्माण करण्यासाठी
+                        आम्ही ज्योतिषीय मार्गदर्शनाचा प्रभावीपणे उपयोग करतो.</p>
+                </div>
+                <!-- Real Estate -->
+                <div class="solution-card">
+                    <div class="solution-icon"><i class="fas fa-home"></i></div>
+                    <h3>रिअल इस्टेट</h3>
+                    <p style="font-size: 0.9rem; color: #ccc;">घर, दुकान, ऑफिस किंवा मालमत्तेसंबंधी निर्णय
+                        आत्मविश्वासाने घ्या.
+                        आमचे ज्योतिष व वास्तु ज्ञान योग्य पर्याय निवडण्यात स्पष्टता देते
+                        आणि तुमच्या निर्णयप्रक्रियेत योग्य दिशा दाखवते.</p>
+                </div>
+                <!-- Health -->
+                <div class="solution-card">
+                    <div class="solution-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>आरोग्य व मानसिक शांती</h3>
+                    <p style="font-size: 0.9rem; color: #ccc;">समग्र आरोग्य, मानसिक स्थैर्य आणि जीवनऊर्जेसाठी
+                        वैयक्तिक गरजेनुसार दिलेल्या ज्योतिषीय सल्ल्याद्वारे
+                        आरोग्याशी संबंधित अडचणींवर प्रभावी मार्गदर्शन मिळवा.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container contact-grid">
+            <div>
+                <h2 class="text-black">संपर्क करा</h2>
+                <p class="text-black" style="font-size: 1.2rem; margin-bottom: 1rem;">दररोजचे उपयुक्त अपडेट्स थेट आपल्या
+                    WhatsApp वर मिळवण्यासाठी
+                    आमच्याशी संपर्क साधा :</p>
+                <ul style="list-style: disc; margin-left: 1.5rem; margin-bottom: 2rem; color: #000;">
+                    <li>दैनिक राशीभविष्य</li>
+                    <li>शुभ मुहूर्त</li>
+                    <li>ज्योतिष व वास्तु संदर्भातील मार्गदर्शन</li>
+                </ul>
+                <div class="contact-info-item text-black">
+                    <i class="fas fa-phone-alt"></i> +91 92251 37171
+                </div>
+                <div class="contact-info-item text-black">
+                    <i class="fas fa-envelope"></i> samruddhivastujyotish@gmail.com
+                </div>
+                <div class="contact-info-item text-black">
+                    <i class="fas fa-map-marker-alt"></i> ग्राउंड फ्लोअर, राणा आर्केड,
+                    बी वॉर्ड, भूमि अभिलेख कार्यालयासमोर,
+                    कामाक्षी ज्वेलर्सच्या मागे,
+                    कोल्हापूर – 416012, महाराष्ट्र
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <label style="display: block; margin-bottom: 0.5rem; color: #000;">आपले नाव</label>
+                    <input type="text">
+
+                    <label style="display: block; margin-bottom: 0.5rem; color: #000;">आपला ई-मेल
+                    </label>
+                    <input type="email">
+
+                    <label style="display: block; margin-bottom: 0.5rem; color: #000;">आपला WhatsApp क्रमांक</label>
+                    <input type="text">
+
+                    <button type="submit" class="btn btn-black" style="width: 100%; border: none;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" style="line-height: 0;">
+        <div class="embed-map-responsive">
+            <div class="embed-map-container"><iframe class="embed-map-frame" frameborder="0" scrolling="no"
+                    marginheight="0" marginwidth="0"
+                    src="https://maps.google.com/maps?width=1000&height=300&hl=en&q=Samruddhi%20Vastu%20Jyotish%2C%20Dr.%20Ranjeet%20Deshmukh&t=&z=14&ie=UTF8&iwloc=B&output=embed"></iframe><a
+                    href="https://imagable.ai"
+                    style="font-size:2px!important;color:gray!important;position:absolute;bottom:0;left:0;z-index:1;max-height:1px;overflow:hidden">AI
+                    Image Generator</a></div>
+            <style>
+                .embed-map-responsive {
+                    position: relative;
+                    text-align: right;
+                    width: 100%;
+                    height: 0;
+                    padding-bottom: 30%;
+                }
+
+                .embed-map-container {
+                    overflow: hidden;
+                    background: none !important;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                .embed-map-frame {
+                    width: 100% !important;
+                    height: 100% !important;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">astro by Dr. Ranjeet</a>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Terms & Conditions</a>
+                <span style="color: #444;">|</span>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="copyright">
+                <div>Developed by Jayrai web</div>
+                <div>Copyright @2023 All Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+
+</body>
+
+</html>
